@@ -1,0 +1,14 @@
+Options -Indexes
+RewriteEngine on
+RewriteCond %{REQUEST_URI} (candidat_[a-z0-9_]+)
+RewriteRule ^(candidat_[a-z0-9_]+)$ index.php?page=candidat&candidat=$1
+RewriteCond %{REQUEST_URI} (entreprise_[a-z0-9_]+)
+RewriteRule ^(entreprise_[a-z0-9_]+)$ index.php?page=entreprise&entreprise=$1
+RewriteCond %{REQUEST_URI} (accueil-[A-Za-z0-9_-ï\s]+)
+RewriteRule ^accueil-([A-Za-z0-9_-ï\s]+)$ index.php?page=accueil&ville=$1
+RewriteCond %{REQUEST_URI} (cvtheque-[a-zA-Z0-9_-]+)
+RewriteRule ^cvtheque-([a-zA-Z0-9_-]+)$ index.php?page=cvtheque&cvcandidat=$1
+RewriteCond %{REQUEST_URI} (infos-entreprise-[a-zA-Z0-9_-]+)
+RewriteRule ^infos-entreprise-([a-zA-Z0-9_-]+)$ index.php?page=infos-entreprise&identreprise=$1
+RewriteCond %{REQUEST_URI} ([a-z0-9_]+)
+RewriteRule ^([a-z0-9_]+)$ index.php?page=$1
